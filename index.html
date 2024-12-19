@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Grocery Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #4caf50;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #3e8e41;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .product img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product-info {
+      flex: 1;
+      margin-left: 15px;
+    }
+
+    .product-info h4 {
+      margin: 0 0 5px;
+      font-size: 18px;
+    }
+
+    .product-info p {
+      margin: 0;
+      color: #555;
+    }
+
+    .product button {
+      padding: 8px 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product button:hover {
+      background-color: #45a049;
+    }
+
+    .cart {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fdfdfd;
+    }
+
+    .cart h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .cart p {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    footer {
+      background-color: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .contact {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fdfdfd;
+    }
+
+    .contact h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .contact p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Online Grocery Store</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container" id="products">
+    <h2>Our Products</h2>
+    <div class="product">
+      <img src="https://via.placeholder.com/80" alt="Apple">
+      <div class="product-info">
+        <h4>Fresh Apples</h4>
+        <p>&#8377;240.00 per kg</p>
+      </div>
+      <button onclick="addToCart(240.00)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/80" alt="Banana">
+      <div class="product-info">
+        <h4>Bananas</h4>
+        <p>&#8377;80.00 per kg</p>
+      </div>
+      <button onclick="addToCart(80.00)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/80" alt="Milk">
+      <div class="product-info">
+        <h4>Milk</h4>
+        <p>&#8377;200.00 per liter</p>
+      </div>
+      <button onclick="addToCart(200.00)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/80" alt="Bread">
+      <div class="product-info">
+        <h4>Whole Wheat Bread</h4>
+        <p>&#8377;160.00 per loaf</p>
+      </div>
+      <button onclick="addToCart(160.00)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="container cart">
+    <h3>Shopping Cart</h3>
+    <p id="total">Total: &#8377;0.00</p>
+  </div>
+
+  <div class="container contact" id="contact">
+    <h3>Contact Information</h3>
+    <p>Email: support@onlinegrocerystore.com</p>
+    <p>Phone: +1 (555) 123-4567</p>
+    <p>Address: 123 Grocery Lane, Foodtown, FT 45678</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Online Grocery Store. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let cartTotal = 0;
+
+    function addToCart(price) {
+      cartTotal += price;
+      document.getElementById('total').innerText = `Total: ₹${cartTotal.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
